@@ -20,6 +20,7 @@ Step 3: Build frontend application
 
 Step 4: Start server
 
+       cd/etest2
         node .   
 
 step 5: Browse application
