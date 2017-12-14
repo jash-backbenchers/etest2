@@ -1,0 +1,30 @@
+<mat-card>
+  <form #form="ngForm">
+    <div fxLayout="column" fxLayoutWrap="wrap" fxLayoutAlign="center">
+      <mat-form-field fxFlex="1">
+        <input matInput placeholder="SKU" required name="sku" [(ngModel)]="productData.sku">
+      </mat-form-field>
+      <mat-form-field fxFlex="1">
+        <input matInput placeholder="Name" required name="name" [(ngModel)]="productData.name">
+      </mat-form-field>
+      <mat-form-field fxFlex="1">
+        <input matInput placeholder="Location" required name="location" [(ngModel)]="productData.location">
+      </mat-form-field>
+      <mat-form-field fxFlex="1">
+        <input matInput placeholder="Department" required name="department" [(ngModel)]="productData.department">
+      </mat-form-field>
+      <mat-form-field fxFlex="1">
+        <input matInput placeholder="Category" required name="category" [(ngModel)]="productData.category">
+      </mat-form-field>
+      <mat-form-field fxFlex="1">
+        <input matInput placeholder="Sub-Category" required name="subcategory" [(ngModel)]="productData.subcategory">
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutAlign.xs="center stretch" class="row-example">
+      <button *ngIf="productData._id" mat-button mat-button routerLink='/products/{{productData?.department}}'>cancel</button>
+      <button *ngIf="productData._id" mat-button mat-button (click)="onRemove.emit(productData)">Delete</button>
+      <button *ngIf="!productData._id" mat-button mat-button routerLink=''>cancel</button>
+      <button mat-button mat-button type="submit" [disabled]="!form.valid" (click)="onChange.emit(productData)">Save</button>
+    </div>
+  </form>
+</mat-card>

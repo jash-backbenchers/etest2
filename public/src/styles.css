@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.product-card{
+    margin-bottom: 10px;
+}
+
+.creatb{
+    position: fixed !important;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999999;
+}
+
+.brandlink{
+    outline-width:0px !important;
+    cursor: pointer;
+}
+
+body{
+    background-color: #e4d4d4;
+}
